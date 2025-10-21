@@ -1,0 +1,40 @@
+name: fart_app
+description: "A fun fart sound application."
+publish_to: 'none' 
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.2.3 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Service Packages
+  provider: ^6.1.1                # 상태 관리
+  audioplayers: ^5.2.1            # 사운드 재생
+  flutter_haptic_feedback: ^0.4.2 # 햅틱 피드백
+  
+  # Localization
+  intl: ^0.18.1                   # 다국어 지원 도구
+  flutter_localizations:
+    sdk: flutter
+
+  # UI
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
+  uses-material-design: true
+
+  # 다국어 지원 활성화
+  generate: true
+
+  # 사운드 애셋 등록
+  assets:
+    - assets/sounds/
