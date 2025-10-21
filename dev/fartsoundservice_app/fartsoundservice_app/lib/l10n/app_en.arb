@@ -1,0 +1,31 @@
+{
+  "@@locale": "en",
+  "app_title": "Fart Playground",
+  "initial_message": "Tap the button to play a random fart!",
+  "initial_bottom_message": "Haptics and sound ready.",
+
+  "button_text_1": "Let it go",
+  "button_text_2": "One more!",
+  "button_text_3": "Fire in the hole",
+  "button_text_4": "Oops",
+  "button_text_5": "Pffff",
+  "button_text_6": "Hit me",
+  "button_text_7": "Boost it",
+  "button_text_8": "Again!",
+  "button_text_9": "Do it",
+  "button_text_10": "Push",
+
+  "bottom_msg_1": "Low wind warning.",
+  "bottom_msg_2": "Breezy vibes.",
+  "bottom_msg_3": "Silent but deadly.",
+  "bottom_msg_4": "Air pressure rising.",
+  "bottom_msg_5": "Safety off.",
+  "bottom_msg_6": "Smell ya later.",
+  "bottom_msg_7": "Wind tunnel engaged.",
+  "bottom_msg_8": "Keep tapping.",
+  "bottom_msg_9": "Almost there.",
+  "bottom_msg_10": "Achievement unlocked.",
+
+  "sound_selector_auto": "Auto",
+  "sound_selector_fart": "Fart "
+}
