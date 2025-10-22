@@ -1,0 +1,46 @@
+name: GitHub Pages Build
+
+on:
+  push:
+    branches:
+      - stable  # ← 배포할 브랜치 이름 (지금 stable 쓰고 있죠)
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository (no submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: false  # ✅ 서브모듈 완전 비활성화
+          fetch-depth: 0
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload site files
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./  # index.html이 위치한 경로
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
