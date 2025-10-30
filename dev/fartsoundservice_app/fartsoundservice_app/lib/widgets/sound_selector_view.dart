@@ -85,12 +85,25 @@ class _SoundSelectorViewState extends State<SoundSelectorView> {
                   color: isSelected ? Colors.white.withAlpha((255 * 0.18).round()) : Colors.transparent,
                 ),
                 child: Center(
-                  child: Text(
-                    text,
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
-                      color: Colors.white.withAlpha((255 * (isSelected ? 1.0 : 0.8)).round()),
+                  child: FittedBox(
+                    fit: BoxFit.scaleDown, // 폭이 모자라면 살짝만 축소
+                    child: Text(
+                      text,
+                      maxLines: 1,                 // ⬅️ 한 줄 고정
+                      softWrap: false,             // ⬅️ 줄바꿈 금지
+                      overflow: TextOverflow.fade, // ⬅️ 살짝 페이드(ellipsis도 가능)
+                      textAlign: TextAlign.center,
+                      // Flutter 3.10+ : 시스템 글자크기 영향 최소화 (선택)
+                      textScaler: const TextScaler.linear(1.0),
+
+                      style: TextStyle(
+                        fontSize: 14,
+                        fontWeight: isSelected ? FontWeight.bold : FontWeight.w600,
+                        letterSpacing: -0.2, // ⬅️ 아주 살짝 자간 압축(가독성 유지)
+                        color: Colors.white.withAlpha(
+                          (255 * (isSelected ? 1.0 : 0.8)).round(),
+                        ),
+                      ),
                     ),
                   ),
                 ),
