@@ -1,7 +1,6 @@
 import 'dart:math';
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import '../l10n/app_localizations.dart';
 
 enum SoundSelectionMode {
   auto,

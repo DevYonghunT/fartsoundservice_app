@@ -2,7 +2,7 @@ name: fartsoundservice_app
 description: A fun fart sound application.
 publish_to: 'none'
 
-version: 1.0.0+3
+version: 1.0.4+6
 
 environment:
   sdk: ">=3.2.3 <4.0.0"
@@ -11,7 +11,7 @@ dependencies:
   flutter:
     sdk: flutter
 
-  provider: ^6.1.1
+  provider: ^6.1.2
   audioplayers: ^5.2.1
 
   # i18n
